@@ -1,0 +1,33 @@
+{
+  "description": "Chrome Extension for Virtual Browser",
+  "manifest_version": 2,
+  "browser_action": {
+    "default_icon": {
+      "19": "images/tm19.png",
+      "38": "images/tm38.png"
+    }
+  },
+  "name": "Virtural Browser",
+  "version": "1.0",
+  "content_scripts": [
+    {
+      "js": [
+        "content-script.js"
+      ],
+      "matches": [
+        "*://*.baidu.com/*",
+        "*://*.sina.com.cn/*"
+      ],
+      "exclude_matches": [
+      ],
+      "run_at": "document_start",
+      "all_frames": true
+    }
+  ],
+  "permissions": [
+    "webRequest",
+    "webRequestBlocking",
+    "<all_urls>"
+  ],
+  "web_accessible_resources": []
+}
